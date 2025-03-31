@@ -2,7 +2,7 @@ import './App.css';
 import io from 'socket.io-client'
 import { useEffect, useState }  from "react";
 
-const socket = io.connect(process.env.BACKEND_URL || "http://localhost:3001");
+const socket = io.connect(process.env.REACT_APP_BACKEND_URL || "http://localhost:3001");
 
 function App() {
   const [room, setRoom] = useState("");
