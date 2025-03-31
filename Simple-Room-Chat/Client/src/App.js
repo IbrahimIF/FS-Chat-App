@@ -2,7 +2,11 @@ import './App.css';
 import io from 'socket.io-client'
 import { useEffect, useState }  from "react";
 
-const socket = io.connect(process.env.REACT_APP_BACKEND_URL || "http://localhost:3001");
+const socket = io.connect(process.env.REACT_APP_BACKEND_URL || "http://localhost:3001", {
+  transports: ["websocket"], // Force WebSockets
+  withCredentials: false // Match backend
+});
+
 
 function App() {
   const [room, setRoom] = useState("");
@@ -22,6 +26,8 @@ function App() {
 
   //this useEffect hook will be used whenever a message is received
   useEffect(() => {
+    socket.on("connect", () => console.log("Connected!"));
+    socket.on("connect_error", (err) => console.log("Error:", err));
     socket.on("receive_message", (data) => { // uses a call back funciton
       setMessageReceived(data.message);
     });
