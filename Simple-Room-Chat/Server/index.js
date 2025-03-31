@@ -23,7 +23,7 @@ const io = new Server(server, { // io manages real-time connections
 io.on("connection", (socket) => { // when a user connects to the server a message will appear
     console.log(`User Connected: ${socket.id}`) // provides a different ID for every new user connected
 
-    socket,on("join_room", (data) => {
+    socket.on("join_room", (data) => {
         socket.join(data);
     });
 
