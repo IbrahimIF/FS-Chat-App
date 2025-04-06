@@ -1,12 +1,12 @@
 <div align="center">
  
-# FullStack-Chat-App
+# Full-Stack Chat-App
 
 </div>
 
 ![Project Status](https://img.shields.io/badge/status-Completed-brightgreen)
 
-![Static Badge](https://img.shields.io/badge/made_with-React_+_Socket.io-turqoise)
+![Static Badge](https://img.shields.io/badge/made_with-React_+_Socket.io-turquoise)
 
 ##### **Description**:
 Simple Full-stack Chat App created with React and Socket.io, following a tutorial made by Code-With-Syket to learn about socket.io.
