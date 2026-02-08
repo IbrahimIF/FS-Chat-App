@@ -3,25 +3,32 @@ import Display from './Components/Display/Display';
 import Button from './Components/Button/Button';
 import Link from './Components/Link/Link';
 import Logo from './Components/Logos/Logo';
-
-
+import socket from './socket';
 import './App.css';
 
 function App() {
-  const [isSent, setIsSent] = useState(false);
-
-  const handleDataSent = () =>{
-    setIsSent(true);
-  }
+  const [room, setRoom] = useState("");
+  const [messages, setMessages] = useState([]);
 
   return (
     <>
-    <div className="App">
-      <Logo />
-      <Display isSent={isSent} setIsSent={setIsSent} />
-      <Button onDataSent={handleDataSent}/>
-      <Link/>
-    </div>
+      <div className="App">
+        <Logo />
+        <Display
+          socket={socket}
+          room={room}
+          messages={messages}
+          setMessages={setMessages}
+        />
+        
+        <Button
+          socket={socket}
+          room={room}
+          setRoom={setRoom}
+          setMessages={setMessages}
+        />
+        <Link/>
+      </div>
     </>
   );
 }
