@@ -19,27 +19,29 @@ function Button({ room, setRoom, setMessages }) {
       room,
       message,
     });
-
+    setMessages((prev) => [...prev, { text: message, type: "sent" }]);
     setMessage("");
   };
 
   return (
     <div className="buttonContainer">
       <input
+        className="input roomInput"
         placeholder="Room ID"
         value={room}
         onChange={(e) => setRoom(e.target.value)}
       />
 
-      <button onClick={joinRoom}>Join Room</button>
-
       <input
-        placeholder="Message"
+        className="input messageInput"
+        placeholder="Type a message..."
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
 
-      <button onClick={sendMessage}>Send</button>
+      <button className="sendButton" onClick={room ? sendMessage : joinRoom}>
+        {room ? "Send" : "Join"}
+      </button>
     </div>
   );
 }
