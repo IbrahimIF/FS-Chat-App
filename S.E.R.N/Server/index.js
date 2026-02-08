@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3001;
 
 const io = new Server(server, { // io manages real-time connections
     cors: { // used for securoty reasons
-        origin:  process.env.FRONTEND_URL || "http://localhost:3000", // only allows connections from the React App
+        origin:  process.env.FRONTEND_URL || "http://localhost:5173", // only allows connections from the React App
         methods: ["GET", "POST"], // only allows get and post requests
         allowedHeaders: ["Content-Type"], // Explicitly allow headers
         credentials: false, // Disable if using cookies/auth

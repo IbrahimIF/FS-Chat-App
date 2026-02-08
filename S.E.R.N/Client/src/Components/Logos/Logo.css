@@ -12,8 +12,8 @@
     will-change: filter;
     transition: filter 300ms;
   }
-  .logo.mongodb:hover {
-    filter: drop-shadow(0 0 1em #0DED64);
+  .logo.socket:hover {
+    filter: drop-shadow(0 0 1em #151515);
   }
   .logo.express:hover {
     filter: drop-shadow(0 0 1em #5c5c5caa);

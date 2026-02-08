@@ -7,7 +7,6 @@ const socket = io.connect(process.env.REACT_APP_BACKEND_URL || "http://localhost
   withCredentials: false // Match backend
 });
 
-
 function App() {
   const [room, setRoom] = useState("");
   const [message, setMesssage] = useState(""); // the message sent
