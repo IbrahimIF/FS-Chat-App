@@ -32,6 +32,10 @@ function Button({ room, setRoom, setMessages }) {
         onChange={(e) => setRoom(e.target.value)}
       />
 
+      <button className="sendButton" onClick={joinRoom}>
+        {"Join"}
+      </button>
+
       <input
         className="input messageInput"
         placeholder="Type a message..."
@@ -39,8 +43,8 @@ function Button({ room, setRoom, setMessages }) {
         onChange={(e) => setMessage(e.target.value)}
       />
 
-      <button className="sendButton" onClick={room ? sendMessage : joinRoom}>
-        {room ? "Send" : "Join"}
+      <button className="sendButton" onClick={sendMessage}>
+        {"Send"}
       </button>
     </div>
   );
